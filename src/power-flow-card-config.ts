@@ -6,7 +6,12 @@ export interface PowerFlowCardConfig extends LovelaceCardConfig {
     battery?: string | ComboEntity;
     battery_charge?: string;
     grid: string | ComboEntity;
+    grid_daily?: string 
     solar?: string;
+    solar_daily_produced?: string
+    solar_daily_eigenverbrauch?: string
+    solar_daily_einspeisung?: string
+    home_daily?: string
     gas?: string;
     water?: string;
   };
@@ -17,4 +22,7 @@ export interface PowerFlowCardConfig extends LovelaceCardConfig {
   max_flow_rate: number;
   w_decimals: number;
   watt_threshold: number;
+  gas_text?: string;
+  gas_icon?: string;
 }
+

@@ -10,6 +10,7 @@ import {
   mdiBatteryMedium,
   mdiBatteryOutline,
   mdiFire,
+  mdiCar,
   mdiHome,
   mdiSolarPower,
   mdiTransmissionTower,
@@ -117,6 +118,13 @@ export class PowerFlowCard extends LitElement {
       : `${round(value, this._config!.w_decimals)} W`;
   };
 
+  private displayDaily = (value: number | null) => {
+    if (value === null) return 0;
+    return `${round(value, 2)} kWh`;
+  };
+
+
+
   protected render(): TemplateResult {
     if (!this._config || !this.hass) {
       return html``;
@@ -182,6 +190,13 @@ export class PowerFlowCard extends LitElement {
           0
         );
     }
+
+    let dailySolarProduction: number = 0;
+    if (entities.solar_daily_produced !== undefined) {
+      dailySolarProduction = Math.max(
+        this.getEntityState(entities.solar_daily_produced), 0);
+    }
+
 
     let totalBatteryIn: number | null = null;
     let totalBatteryOut: number | null = null;
@@ -464,7 +479,7 @@ export class PowerFlowCard extends LitElement {
                   <span class="label"
                     >${this.hass.localize(
                       "ui.panel.lovelace.cards.energy.energy_distribution.grid"
-                    )}</span
+        )} -- ${batteryToGrid} </span
                   >
                 </div>`
               : html`<div class="spacer"></div>`}
@@ -1009,6 +1024,9 @@ export class PowerFlowCard extends LitElement {
     }
     .solar {
       color: var(--primary-text-color);
+    }
+    .daily {
+      font-style: italic;
     }
     .solar .circle {
       border-color: var(--energy-solar-color);

@@ -1,0 +1,3 @@
+C:\Users\manfred\source\repos\manfred003\power-flow-card\obj\Debug\my-card.njsproj.AssemblyReference.cache
+C:\Users\manfred\source\repos\manfred003\power-flow-card\obj\Debug\my-card.njsproj.CoreCompileInputs.cache
+C:\Users\manfred\source\repos\manfred003\power-flow-card\bin\Microsoft.NodejsTools.WebRole.dll

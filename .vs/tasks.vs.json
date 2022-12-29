@@ -1,0 +1,15 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskLabel": "Task-tsconfig",
+      "appliesTo": "tsconfig.json",
+      "type": "launch"
+    },
+    {
+      "taskLabel": "Task-tsconfig",
+      "appliesTo": "tsconfig.json",
+      "type": "launch"
+    }
+  ]
+}

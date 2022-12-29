@@ -4,7 +4,7 @@
     "target": "es2017",
     "module": "esnext",
     "moduleResolution": "node",
-    "lib": ["es2017", "dom", "dom.iterable"],
+    "lib": [ "es2017", "dom", "dom.iterable" ],
     "noEmit": true,
     "noUnusedParameters": true,
     "noImplicitReturns": true,
@@ -17,6 +17,11 @@
     "outDir": "dist",
     "rootDir": "."
   },
-  "include": ["**/*.ts"],
-  "exclude": ["node_modules"]
+  "scripts": {
+    "build": "tsc.cmd --build",
+    "clean": "tsc.cmd --build --clean"
+  },
+  "include": [ "**/*.ts" ],
+  "exclude": [ "node_modules" ]
 }
+
