@@ -363,6 +363,9 @@ export class PowerFlowCard extends LitElement {
                         <span class="solar">
                           ${this.displayValue(totalSolarProduction)}</span
                         >
+                        <span class="solar daily">
+                          ${this.displayDaily(dailySolarProduction)}</span
+                        >
                       </div>
                     </div>`
                   : hasGas || hasWater
@@ -371,12 +374,11 @@ export class PowerFlowCard extends LitElement {
                 ${hasGas
                   ? html`<div class="circle-container gas">
                       <span class="label"
-                        >${this.hass.localize(
-                          "ui.panel.lovelace.cards.energy.energy_distribution.gas"
-                        )}</span
+                        > ${this._config.gas_text}
+                        </span
                       >
                       <div class="circle">
-                        <ha-svg-icon .path=${mdiFire}></ha-svg-icon>
+                        <ha-svg-icon .path=${mdiCar}></ha-svg-icon>
                         ${formatNumber(gasUsage || 0, this.hass.locale, {
                           maximumFractionDigits: 1,
                         })}
